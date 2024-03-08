@@ -1,0 +1,15 @@
+Package: fstival
+Type: Package
+Title: Cautious Lightning Fast Serialization of Data Frames
+Version: 0.1.0
+Authors@R:
+    person("Advik", "Shreekumar", role = c("ctb", "cre"), email = "adviks@mit.edu")
+Description: Augments the 'fst' package with basic input/output checks to avoid uncomfortable segfaults.
+License: AGPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    fst
+Suggests: 
+    data.table
+RoxygenNote: 7.2.3
