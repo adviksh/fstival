@@ -71,6 +71,12 @@ metadata_fst = function(path, old_format = FALSE) {
 #' @param uniform_encoding If 'TRUE', all character vectors will be assumed to have elements with equal encoding. The encoding (latin1, UTF8 or native) of the first non-NA element will used as encoding for the whole column. This will be a correct assumption for most use cases. If 'uniform.encoding' is set to 'FALSE', no such assumption will be made and all elements will be converted to the same encoding. The latter is a relatively expensive operation and will reduce write performance for character columns.
 #'
 write_fst = function(x, path, compress = 50, uniform_encoding = TRUE) {
+
+  if (dir.exists(dirname(path)) == FALSE) {
+    stop("Can't write file to provided path. Directory does not exist: ",
+         dirname(path))
+  }
+
 fst::write_fst(x = x,
                path     = path,
                compress = compress,
